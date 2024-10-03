@@ -24,22 +24,28 @@ function makeGrid(gridNumb){
 
 makeGrid(16);
 
-const allColumns = document.querySelectorAll(".gridColumn");
-
 const upperSection = document.querySelector(".upperSection");
 const reset = document.createElement("button");
 upperSection.appendChild(reset);
 reset.textContent = "RESET GRID";
 
 function removeGrid(){
+    const allColumns = document.querySelectorAll(".gridColumn");
     allColumns.forEach((column) => {
         column.remove();
     });
 };
 
 function resetGrid(gridNumb){
+    gridNumb = ""
+    while (!(Number(gridNumb))){
+        gridNumb = prompt("Grid Size ?");
+        if (!(Number(gridNumb))) {
+            alert("Incorrect data collected, please enter a number.");
+        };
+    };
+
     removeGrid();
-    gridNumb = prompt("Grid size ?");
     makeGrid(gridNumb);
 };
 
