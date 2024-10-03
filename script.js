@@ -25,12 +25,16 @@ function makeGrid(gridNumb){
 makeGrid(16);
 
 const allColumns = document.querySelectorAll(".gridColumn");
-const allCells = document.querySelectorAll(".gridRow");
 
 const upperSection = document.querySelector(".upperSection");
 const reset = document.createElement("button");
 upperSection.appendChild(reset);
 reset.textContent = "RESET GRID";
 
+function removeGrid(){
+    allColumns.forEach((column) => {
+        column.remove();
+    });
+};
 
-
+reset.addEventListener("click", removeGrid);
