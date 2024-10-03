@@ -31,3 +31,7 @@ html{
 .gridRow{
     flex: 1;
 }
+
+.upperSection{
+    margin-bottom: 2%;
+}
