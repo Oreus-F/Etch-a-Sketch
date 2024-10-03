@@ -23,4 +23,10 @@ function makeGrid(gridNumb){
 };
 
 
-makeGrid(80);
+makeGrid(16);
+
+const upperSection = document.querySelector(".upperSection");
+const reset = document.createElement("button");
+upperSection.appendChild(reset);
+reset.textContent = "RESET GRID"
+
