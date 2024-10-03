@@ -36,15 +36,15 @@ function removeGrid(){
     });
 };
 
-function resetGrid(gridNumb){
-    gridNumb = ""
-    while (!(Number(gridNumb))){
-        gridNumb = prompt("Grid Size ?");
-        if (!(Number(gridNumb))) {
-            alert("Incorrect data collected, please enter a number.");
-        };
-    };
 
+function getGridNumb(){
+    let gridNumb = prompt("Grid size ?");
+    return gridNumb;
+};
+
+
+function resetGrid(gridNumb){
+    gridNumb = getGridNumb();
     removeGrid();
     makeGrid(gridNumb);
 };
