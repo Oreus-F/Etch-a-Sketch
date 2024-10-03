@@ -37,4 +37,10 @@ function removeGrid(){
     });
 };
 
-reset.addEventListener("click", removeGrid);
+function resetGrid(gridNumb){
+    removeGrid();
+    gridNumb = prompt("Grid size ?");
+    makeGrid(gridNumb);
+};
+
+reset.addEventListener("click", resetGrid);
