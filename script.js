@@ -1,5 +1,14 @@
 const container = document.querySelector(".container");
 
+
+function getRandomRGB(){
+    let r = Math.floor(Math.random()* 256);
+    let g = Math.floor(Math.random()* 256);
+    let b = Math.floor(Math.random()* 256);
+    let rgb = `rgb(${r}, ${g}, ${b})`;
+    return rgb;  
+};
+
 function makeGrid(gridNumb){
     for (let i = 0; i < gridNumb; i++){
         const column = document.createElement("div");
@@ -16,7 +25,7 @@ function makeGrid(gridNumb){
     const allCells = document.querySelectorAll(".gridRow");
     allCells.forEach((cell) => {
         cell.addEventListener("mouseover", function(e) {
-            e.target.style.background = "lightblue";
+            e.target.style.background = getRandomRGB();
         });
     });
 
@@ -56,3 +65,4 @@ function resetGrid(gridNumb){
 };
 
 reset.addEventListener("click", resetGrid);
+
