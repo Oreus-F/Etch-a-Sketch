@@ -25,15 +25,14 @@ function makeGrid(gridNumb){
     const allCells = document.querySelectorAll(".gridRow");
     allCells.forEach((cell) => {
         cell.addEventListener("mouseover", function(e) {
-            e.target.style.background = getRandomRGB();
             let activeCell = window.getComputedStyle(e.target);
             let opacityCell = activeCell.getPropertyValue("opacity");
-            console.log(opacityCell);
             opacityCell = Number(opacityCell);
             if (opacityCell < 1){
                 opacityCell += 0.1;
+                e.target.style.opacity = opacityCell;
+                e.target.style.background = getRandomRGB();
             };
-            e.target.style.opacity = opacityCell;
         });
     });
 
