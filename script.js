@@ -31,7 +31,7 @@ function makeGrid(gridNumb){
             if (opacityCell < 1){
                 opacityCell += 0.1;
                 e.target.style.opacity = opacityCell;
-                e.target.style.background = getRandomRGB();
+                e.target.style.backgroundColor = getRandomRGB();
             };
         });
     });
@@ -65,10 +65,20 @@ function getGridNumb(){
 };
 
 
-function resetGrid(gridNumb){
-    gridNumb = getGridNumb();
+function resetGrid(){
+    let gridNumb = getGridNumb();
     removeGrid();
     makeGrid(gridNumb);
 };
+
+
+function eraseAll(){
+    const allCells = document.querySelectorAll(".gridRow");
+    allCells.forEach((element) =>{
+        element.removeAttribute("style");
+    });
+};
+
+
 
 reset.addEventListener("click", resetGrid);
