@@ -62,7 +62,7 @@ function getGridNumb(){
 };
 
 
-function resetGrid(){
+function newGrid(){
     let gridNumb = getGridNumb();
     removeGrid();
     makeGrid(gridNumb);
@@ -77,6 +77,6 @@ function eraseAll(){
 };
 
 
-reset = document.querySelector(".resetGrid");
+newButton = document.querySelector(".newGrid");
 
-reset.addEventListener("click", resetGrid);
+newButton.addEventListener("click", newGrid);
