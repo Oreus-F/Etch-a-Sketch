@@ -69,7 +69,7 @@ function newGrid(){
 };
 
 
-function eraseAll(){
+function clearAll(){
     const allCells = document.querySelectorAll(".gridRow");
     allCells.forEach((element) =>{
         element.removeAttribute("style");
@@ -78,7 +78,7 @@ function eraseAll(){
 
 
 newButton = document.querySelector(".newGrid");
-resetGrid = document.querySelector(".eraseAll");
+clearButton = document.querySelector(".clearAll");
 
 newButton.addEventListener("click", newGrid);
-resetGrid.addEventListener("click", eraseAll);
+clearButton.addEventListener("click", clearAll);
