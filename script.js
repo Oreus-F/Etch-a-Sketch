@@ -78,5 +78,7 @@ function eraseAll(){
 
 
 newButton = document.querySelector(".newGrid");
+resetGrid = document.querySelector(".eraseAll");
 
 newButton.addEventListener("click", newGrid);
+resetGrid.addEventListener("click", eraseAll);
