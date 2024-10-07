@@ -52,9 +52,9 @@ function removeGrid(){
 
 function getGridNumb(){
     let gridNumb = "";
-    while (!(Number(gridNumb > 1 && gridNumb < 100))){
+    while (!(Number(gridNumb > 1 && gridNumb <= 100))){
         gridNumb = prompt("Grid size ?");
-        if (!(Number(gridNumb > 1 && gridNumb < 100))){ 
+        if (!(Number(gridNumb > 1 && gridNumb <= 100))){ 
             alert("Only a number between 2 and 100 are allowed.");
         };
     };
