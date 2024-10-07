@@ -14,6 +14,16 @@ html{
     padding: 0;
 }
 
+a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.footer, .header{
+    width: 100vw;
+}
+
 .middleSection{
     display: flex;
     flex: 1;
@@ -45,11 +55,15 @@ html{
     background-color: white;
 }
 
-.footer{
-    display: flex;
-    justify-content: space-between;
+.header{
+    text-align: center;
 }
 
-.footer,p{
-    margin: auto;
+.footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 6mm;
 }
+
+
+
