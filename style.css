@@ -7,12 +7,14 @@ body{
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    background-color: rgba(25, 153, 25, 0.1)
 }
 
 html{
     margin: 0;
     padding: 0;
 }
+
 
 a{
     margin: 0;
@@ -44,14 +46,19 @@ button{
 .panel{
     flex : 1;
     display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-height: fit-content;
+    text-align: center;
 }
 
 .container{
-    border: 0.5mm solid black;
+    border: 1px solid black;
     display : flex;
     flex: 2 0 auto;
     max-height: 80%;
     aspect-ratio: 1/1;
+    background-color: white;
 }
 
 .gridColumn{
@@ -63,7 +70,7 @@ button{
 .gridRow{
     flex: 1;
     opacity: 0;
-    background-color: lightgray;
+    background-color: white;
     border: 1px dashed black;
 }
 
@@ -77,5 +84,11 @@ button{
     padding: 6mm;
 }
 
+.hover{
+    border: 1px solid black;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
 
