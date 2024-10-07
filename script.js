@@ -40,10 +40,7 @@ function makeGrid(gridNumb){
 
 makeGrid(16);
 
-const upperSection = document.querySelector(".upperSection");
-const reset = document.createElement("button");
-upperSection.appendChild(reset);
-reset.textContent = "RESET GRID";
+
 
 function removeGrid(){
     const allColumns = document.querySelectorAll(".gridColumn");
@@ -55,9 +52,9 @@ function removeGrid(){
 
 function getGridNumb(){
     let gridNumb = "";
-    while (!(Number(gridNumb > 1 && gridNumb < 100))){
+    while (!(Number(gridNumb > 1 && gridNumb <= 100))){
         gridNumb = prompt("Grid size ?");
-        if (!(Number(gridNumb > 1 && gridNumb < 100))){ 
+        if (!(Number(gridNumb > 1 && gridNumb <= 100))){ 
             alert("Only a number between 2 and 100 are allowed.");
         };
     };
@@ -65,14 +62,14 @@ function getGridNumb(){
 };
 
 
-function resetGrid(){
+function newGrid(){
     let gridNumb = getGridNumb();
     removeGrid();
     makeGrid(gridNumb);
 };
 
 
-function eraseAll(){
+function clearAll(){
     const allCells = document.querySelectorAll(".gridRow");
     allCells.forEach((element) =>{
         element.removeAttribute("style");
@@ -80,5 +77,10 @@ function eraseAll(){
 };
 
 
+newButton = document.querySelector(".newGrid");
+clearButton = document.querySelector(".clearAll");
 
-reset.addEventListener("click", resetGrid);
+newButton.addEventListener("click", newGrid);
+clearButton.addEventListener("click", clearAll);
+
+

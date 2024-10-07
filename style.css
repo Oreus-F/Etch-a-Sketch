@@ -4,9 +4,10 @@ body{
     display: flex;
     margin: 0px;
     padding: 0;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    background-color: rgba(25, 153, 25, 0.1)
 }
 
 html{
@@ -14,12 +15,50 @@ html{
     padding: 0;
 }
 
+
+a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+button{
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+.footer, .header{
+    width: 100vw;
+}
+
+.middleSection{
+    display: flex;
+    flex: 1;
+    padding: 10%;
+}
+
+.settings{
+    flex: 1;
+    display: flex;
+    padding: 6mm;
+}
+
+.panel{
+    flex : 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-height: fit-content;
+    text-align: center;
+}
+
 .container{
-    border: 0.5mm solid black;
+    border: 1px solid black;
     display : flex;
-    flex: 1 0 auto;
+    flex: 2 0 auto;
     max-height: 80%;
     aspect-ratio: 1/1;
+    background-color: white;
 }
 
 .gridColumn{
@@ -32,8 +71,24 @@ html{
     flex: 1;
     opacity: 0;
     background-color: white;
+    border: 1px dashed black;
 }
 
-.upperSection{
-    margin-bottom: 2%;
+.header{
+    text-align: center;
 }
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 6mm;
+}
+
+.hover{
+    border: 1px solid black;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
