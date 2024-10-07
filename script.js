@@ -82,3 +82,5 @@ clearButton = document.querySelector(".clearAll");
 
 newButton.addEventListener("click", newGrid);
 clearButton.addEventListener("click", clearAll);
+
+
