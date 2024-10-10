@@ -1,14 +1,6 @@
 const container = document.querySelector(".container");
 
 
-function getRandomRGB(){
-    let r = Math.floor(Math.random()* 256);
-    let g = Math.floor(Math.random()* 256);
-    let b = Math.floor(Math.random()* 256);
-    let rgb = `rgb(${r}, ${g}, ${b})`;
-    return rgb;  
-};
-
 function makeGrid(gridNumb){
     for (let i = 0; i < gridNumb; i++){
         const column = document.createElement("div");
@@ -22,24 +14,8 @@ function makeGrid(gridNumb){
             column.appendChild(cell).setAttribute("class", "gridRow");
         };
     });
-    const allCells = document.querySelectorAll(".gridRow");
-    allCells.forEach((cell) => {
-        cell.addEventListener("mouseover", function(e) {
-            let activeCell = window.getComputedStyle(e.target);
-            let opacityCell = activeCell.getPropertyValue("opacity");
-            opacityCell = Number(opacityCell);
-            if (opacityCell < 1){
-                opacityCell += 0.1;
-                e.target.style.opacity = opacityCell;
-                e.target.style.backgroundColor = getRandomRGB();
-            };
-        });
-    });
 
 };
-
-makeGrid(16);
-
 
 
 function removeGrid(){
@@ -76,11 +52,65 @@ function clearAll(){
     });
 };
 
+function getRandomRGB(){
+    let r = Math.floor(Math.random()* 256);
+    let g = Math.floor(Math.random()* 256);
+    let b = Math.floor(Math.random()* 256);
+    let rgb = `rgb(${r}, ${g}, ${b})`;
+    return rgb;  
+};
 
-newButton = document.querySelector(".newGrid");
-clearButton = document.querySelector(".clearAll");
 
-newButton.addEventListener("click", newGrid);
-clearButton.addEventListener("click", clearAll);
+makeGrid(16);
+
+// OK COMMENT CA MARCHE PUTAIN
+
+const allCells = document.querySelectorAll(".gridRow");
+allCells.forEach((cell) => {
+    cell.addEventListener(("mousedown"), (e) => {
+        e.target.style.backgroundColor = "black";
+    });
+});
+
+
+const settings = document.querySelector(".settings");
+
+
+//Listener for all settings panel
+settings.addEventListener("click", (e) => {
+    let target = e.target;
+
+    switch(target.id){
+
+        case "newGrid":
+            newGrid();
+            break;
+
+        case "clearAll":
+            clearAll();
+            break;
+
+        case "colorMode":
+            console.log("Choisi ta couleur rené");
+            break;
+
+        case "rainbowMode":
+            console.log("LES COULEURS SA MERE");
+            break;
+        
+        case "eraserMode":
+            console.log("Oops misktakes are made");
+            break;
+
+        case "mouseover":
+            console.log("Oui passe au dessus avec ta souris !");
+            break;
+        
+        case "click":
+            console.log("VAS Y CLICK BATAAAAARD");
+            break;
+
+    };
+}); 
 
 
