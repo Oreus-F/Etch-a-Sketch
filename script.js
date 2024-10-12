@@ -1,30 +1,15 @@
 const container = document.querySelector(".container");
+const settings = document.querySelector(".settings");
+let allColumns;
+let allCells;
 
-
-function makeGrid(gridNumb){
-    for (let i = 0; i < gridNumb; i++){
-        const column = document.createElement("div");
-        container.appendChild(column).setAttribute("class", "gridColumn");
-    };
-    const allColumns = document.querySelectorAll(".gridColumn");
-
-    allColumns.forEach((column) => {
-        for (let j= 0; j< gridNumb; j++) {
-            const cell = document.createElement("div");
-            column.appendChild(cell).setAttribute("class", "gridRow");
-        };
-    });
-
-};
 
 
 function removeGrid(){
-    const allColumns = document.querySelectorAll(".gridColumn");
     allColumns.forEach((column) => {
         column.remove();
     });
 };
-
 
 function getGridNumb(){
     let gridNumb = "";
@@ -37,6 +22,25 @@ function getGridNumb(){
     return gridNumb;
 };
 
+function makeGrid(gridNumb){
+    for (let i = 0; i < gridNumb; i++){
+        const column = document.createElement("div");
+        container.appendChild(column).setAttribute("class", "gridColumn");
+    };
+    let allColumns = document.querySelectorAll(".gridColumn");
+
+    allColumns.forEach((column) => {
+        for (let j= 0; j< gridNumb; j++) {
+            const cell = document.createElement("div");
+            column.appendChild(cell).setAttribute("class", "gridRow");
+        };
+    });
+
+    allCells = document.querySelectorAll(".gridRow");
+    allCells.forEach((cell) => {
+        cell.addEventListener(listenerVariable, action);
+    });
+};
 
 function newGrid(){
     let gridNumb = getGridNumb();
@@ -44,9 +48,7 @@ function newGrid(){
     makeGrid(gridNumb);
 };
 
-
 function clearAll(){
-    const allCells = document.querySelectorAll(".gridRow");
     allCells.forEach((element) =>{
         element.removeAttribute("style");
     });
@@ -60,6 +62,10 @@ function getRandomRGB(){
     return rgb;  
 };
 
+function eraserBrushMode(event){
+    event.target.removeAttribute("style");
+};
+
 function rainbowBrushMode(event){
     event.target.style.backgroundColor = getRandomRGB()
 };
@@ -70,26 +76,12 @@ function selectedColorBrushMode(event){
 };
 
 
-// VARIABLE FOR THE ADD EVENT LISTENER
-
-
-
-
-
-
-
-
-
-
-
-
-
-const settings = document.querySelector(".settings");
-
 
 //Listener for all settings panel
 settings.addEventListener("click", (e) => {
     let target = e.target;
+    allColumns = document.querySelectorAll(".gridColumn");
+    allCells = document.querySelectorAll(".gridRow");
 
     switch(target.id){
 
@@ -106,70 +98,79 @@ settings.addEventListener("click", (e) => {
                 break;
             } else {
                 allCells.forEach((cell) => {
-                    action = rainbowBrushMode;
                     cell.removeEventListener(listenerVariable, action);
+                });
+                allCells.forEach((cell) => {
                     action = selectedColorBrushMode;
                     cell.addEventListener(listenerVariable, action);
                     });
                 };
-                break;
+                break; 
 
         case "rainbowMode":
             if (action === rainbowBrushMode) {
                 break;
             } else {
                 allCells.forEach((cell) => {
-                    action = selectedColorBrushMode;
                     cell.removeEventListener(listenerVariable, action);
+                });
+                allCells.forEach((cell) => {
                     action = rainbowBrushMode;
                     cell.addEventListener(listenerVariable, action);
                     });
                 };
-                break;
+                break; 
         
         case "eraserMode":
-            console.log("Oops misktakes are made");
-            break;
+            if (action === eraserBrushMode) {
+                break;
+            } else {
+                allCells.forEach((cell) => {
+                    cell.removeEventListener(listenerVariable, action);
+                });
+                allCells.forEach((cell) => {
+                    action = eraserBrushMode;
+                    cell.addEventListener(listenerVariable, action);
+                    });
+                };
+                break;                
 
         case "mouseover":
             if (listenerVariable === "mouseover") {
                 break;
             } else {
                 allCells.forEach((cell) => {
-                    listenerVariable = "click";
                     cell.removeEventListener(listenerVariable, action);
+                });
+                allCells.forEach((cell) => {
                     listenerVariable = "mouseover";
                     cell.addEventListener(listenerVariable, action);
                     });
                 };
-                break;
+                break; 
             
         case "click":
             if (listenerVariable === "click") {
                 break;
             } else {
                 allCells.forEach((cell) => {
-                    listenerVariable = "mouseover";
                     cell.removeEventListener(listenerVariable, action);
+                });
+                allCells.forEach((cell) => {
                     listenerVariable = "click";
                     cell.addEventListener(listenerVariable, action);
                     });
                 };
-                break;
+                break; 
 
     };
 }); 
 
 
 let listenerVariable = "mouseover";
-
 let action = selectedColorBrushMode;
 
-const allCells = document.querySelectorAll(".gridRow");
-
-allCells.forEach((cell) => {
-    cell.addEventListener(listenerVariable, action);
-});
-
-
 makeGrid(16);
+
+allColumns = document.querySelectorAll(".gridColumn");
+allCells = document.querySelectorAll(".gridRow");
