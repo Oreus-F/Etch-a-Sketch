@@ -60,17 +60,28 @@ function getRandomRGB(){
     return rgb;  
 };
 
+function rainbowBrushMode(event){
+    event.target.style.backgroundColor = getRandomRGB()
+};
 
-makeGrid(16);
+//NEED OPTION TO CHOOSE COLOR NOW ITS JUST BLACK
+function selectedColorBrushMode(event){
+    event.target.style.backgroundColor = "black";
+};
 
-// OK COMMENT CA MARCHE PUTAIN
 
-const allCells = document.querySelectorAll(".gridRow");
-allCells.forEach((cell) => {
-    cell.addEventListener(("mousedown"), (e) => {
-        e.target.style.backgroundColor = "black";
-    });
-});
+// VARIABLE FOR THE ADD EVENT LISTENER
+
+
+
+
+
+
+
+
+
+
+
 
 
 const settings = document.querySelector(".settings");
@@ -91,26 +102,74 @@ settings.addEventListener("click", (e) => {
             break;
 
         case "colorMode":
-            console.log("Choisi ta couleur rené");
-            break;
+            if (action === selectedColorBrushMode) {
+                break;
+            } else {
+                allCells.forEach((cell) => {
+                    action = rainbowBrushMode;
+                    cell.removeEventListener(listenerVariable, action);
+                    action = selectedColorBrushMode;
+                    cell.addEventListener(listenerVariable, action);
+                    });
+                };
+                break;
 
         case "rainbowMode":
-            console.log("LES COULEURS SA MERE");
-            break;
+            if (action === rainbowBrushMode) {
+                break;
+            } else {
+                allCells.forEach((cell) => {
+                    action = selectedColorBrushMode;
+                    cell.removeEventListener(listenerVariable, action);
+                    action = rainbowBrushMode;
+                    cell.addEventListener(listenerVariable, action);
+                    });
+                };
+                break;
         
         case "eraserMode":
             console.log("Oops misktakes are made");
             break;
 
         case "mouseover":
-            console.log("Oui passe au dessus avec ta souris !");
-            break;
-        
+            if (listenerVariable === "mouseover") {
+                break;
+            } else {
+                allCells.forEach((cell) => {
+                    listenerVariable = "click";
+                    cell.removeEventListener(listenerVariable, action);
+                    listenerVariable = "mouseover";
+                    cell.addEventListener(listenerVariable, action);
+                    });
+                };
+                break;
+            
         case "click":
-            console.log("VAS Y CLICK BATAAAAARD");
-            break;
+            if (listenerVariable === "click") {
+                break;
+            } else {
+                allCells.forEach((cell) => {
+                    listenerVariable = "mouseover";
+                    cell.removeEventListener(listenerVariable, action);
+                    listenerVariable = "click";
+                    cell.addEventListener(listenerVariable, action);
+                    });
+                };
+                break;
 
     };
 }); 
 
 
+let listenerVariable = "mouseover";
+
+let action = selectedColorBrushMode;
+
+const allCells = document.querySelectorAll(".gridRow");
+
+allCells.forEach((cell) => {
+    cell.addEventListener(listenerVariable, action);
+});
+
+
+makeGrid(16);
