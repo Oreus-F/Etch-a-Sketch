@@ -2,7 +2,8 @@ const container = document.querySelector(".container");
 const settings = document.querySelector(".settings");
 let allColumns;
 let allCells;
-
+let listenerVariable = "mouseover";
+let action = selectedColorBrushMode;
 
 
 function removeGrid(){
@@ -167,10 +168,5 @@ settings.addEventListener("click", (e) => {
 }); 
 
 
-let listenerVariable = "mouseover";
-let action = selectedColorBrushMode;
-
 makeGrid(16);
 
-allColumns = document.querySelectorAll(".gridColumn");
-allCells = document.querySelectorAll(".gridRow");
