@@ -4,6 +4,7 @@ let allColumns;
 let allCells;
 let listenerVariable = "mouseover";
 let action = selectedColorBrushMode;
+let handleClick = true;
 
 
 function removeGrid(){
@@ -77,7 +78,6 @@ function selectedColorBrushMode(event){
 };
 
 
-
 //Listener for all settings panel
 settings.addEventListener("click", (e) => {
     let target = e.target;
@@ -101,8 +101,8 @@ settings.addEventListener("click", (e) => {
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
                 });
+                action = selectedColorBrushMode;
                 allCells.forEach((cell) => {
-                    action = selectedColorBrushMode;
                     cell.addEventListener(listenerVariable, action);
                     });
                 };
@@ -115,8 +115,8 @@ settings.addEventListener("click", (e) => {
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
                 });
+                action = rainbowBrushMode;
                 allCells.forEach((cell) => {
-                    action = rainbowBrushMode;
                     cell.addEventListener(listenerVariable, action);
                     });
                 };
@@ -129,8 +129,8 @@ settings.addEventListener("click", (e) => {
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
                 });
+                action = eraserBrushMode;
                 allCells.forEach((cell) => {
-                    action = eraserBrushMode;
                     cell.addEventListener(listenerVariable, action);
                     });
                 };
@@ -143,24 +143,32 @@ settings.addEventListener("click", (e) => {
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
                 });
+                listenerVariable = "mouseover";
                 allCells.forEach((cell) => {
-                    listenerVariable = "mouseover";
                     cell.addEventListener(listenerVariable, action);
                     });
                 };
                 break; 
             
         case "click":
-            if (listenerVariable === "click") {
+            if (listenerVariable === "mousedown") {
                 break;
             } else {
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
                 });
+
+                listenerVariable = "mousedown";
+
+
                 allCells.forEach((cell) => {
-                    listenerVariable = "click";
                     cell.addEventListener(listenerVariable, action);
+
                     });
+
+                // try with flags here
+                
+
                 };
                 break; 
 
