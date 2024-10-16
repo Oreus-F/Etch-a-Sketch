@@ -4,7 +4,7 @@ let allColumns;
 let allCells;
 let listenerVariable = "mouseover";
 let action = selectedColorBrushMode;
-let handleClick = true;
+let isMouseDown = false;
 
 
 function removeGrid(){
@@ -76,6 +76,16 @@ function rainbowBrushMode(event){
 function selectedColorBrushMode(event){
     event.target.style.backgroundColor = "black";
 };
+
+
+container.addEventListener("mousedown", () => { 
+    isMouseDown = true;
+    console.log("WORKING");
+});
+container.addEventListener("mouseup", () => {
+    isMouseDown = false;
+    console.log("AAAAAAAAAND ITS DONE")
+});
 
 
 //Listener for all settings panel
@@ -167,8 +177,8 @@ settings.addEventListener("click", (e) => {
                     });
 
                 // try with flags here
-                
 
+                
                 };
                 break; 
 
