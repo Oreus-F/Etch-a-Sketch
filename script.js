@@ -88,6 +88,8 @@ container.addEventListener("mouseup", () => {
 });
 
 
+
+
 //Listener for all settings panel
 settings.addEventListener("click", (e) => {
     let target = e.target;
@@ -177,6 +179,7 @@ settings.addEventListener("click", (e) => {
                     });
 
                 // try with flags here
+                handleClick;
 
                 
                 };
@@ -185,6 +188,17 @@ settings.addEventListener("click", (e) => {
     };
 }); 
 
+function handleClick(event){
+    allCells.forEach((cell) => {
+        cell.addEventListener("mouseover", () => {
+            if (isMouseDown === true) {
+                action
+            } else {
+                event.preventDefault();
+            };
+        });
+    });
+};
 
 makeGrid(16);
 
