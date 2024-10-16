@@ -1,49 +1,13 @@
 Etch-a-Sketch Challenge from Odin Project
 
 
-Separate the project in several function
+I've completed this challenge with the least features possible at first. That was quite entertaining. My first version was a white box and a button. The mouse hovering was putting rainbow colors from a 0 to 1 opacity each time you was passing over it. 
 
-______________
+After that i spent more time, looking at others work and realise that i was able to add more features and that i actually know how to do it. Beside the look or anything i wanted to push myself, test my competences into that project. 
 
-function 1 : Make a grid 
+I realise quickly, as simple as it seems, makes everythings work together wasn't that simple. That was the perfect opportunity to came back into old concept and articles in order to make everything works. 
 
-with for loops and Nodelist we can create the exact grid size we want. the function's needed with an argument who define the wanted size.
-
-______________
-
-function 2 : Remove the grid
-
-with DOM manipulation, will be usefull later
-
-______________
-
-function 3 : get a Grid Numb 
-
-with a while loop that keep looping wich the answer's not a number between 2 and 100
-
-i choose a minimum of 2 to make a real grid and not just a cube.
-
-______________
+Expect the general design (wich i want take care at the end when all the js's done.) i'm actually finishing some details right now that i really want to get into.
 
 
-function 4 : Reset the grid 
-
-this one call back the function 2 and 3 
-
-it's triggerd by the button reset on the top of the DOM by a simple click
-
-
-______________
-
-function 5 : get a random RGB number
-
-with math floor and math random. this function provide an RGB random setting.
-
-Will be usefull in the first function
-
-
-______________
-
-COLOR SETTING
-
-I've decided to try the color and the opacity stuff. i've managed to have access to the opacity value when the mouse is over the target cell. If it's value is below 1, the color's change and the opacity rise up by 0.1. When the opacity's 1, nothing change anymore.
+Anyways, It's cool to test itself with that kind of project, realise there's it a lot to learn and it's still enjoyable. 
