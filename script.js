@@ -42,6 +42,7 @@ function makeGrid(gridNumb){
     allCells.forEach((cell) => {
         cell.addEventListener(listenerVariable, action);
     });
+ 
 };
 
 function newGrid(){
@@ -74,18 +75,13 @@ function rainbowBrushMode(event){
 
 //NEED OPTION TO CHOOSE COLOR NOW ITS JUST BLACK
 function selectedColorBrushMode(event){
-    event.target.style.backgroundColor = "black";
+    if (listenerVariable === "mouseover") {
+        event.target.style.backgroundColor = "black";
+    } else if (event.buttons == 1) {
+        event.preventDefault();
+        event.target.style.backgroundColor = "black";
+    };
 };
-
-
-container.addEventListener("mousedown", () => { 
-    isMouseDown = true;
-    console.log("WORKING");
-});
-container.addEventListener("mouseup", () => {
-    isMouseDown = false;
-    console.log("AAAAAAAAAND ITS DONE")
-});
 
 
 
@@ -163,14 +159,14 @@ settings.addEventListener("click", (e) => {
                 break; 
             
         case "click":
-            if (listenerVariable === "mousedown") {
+            if (listenerVariable === "mousemove") {
                 break;
             } else {
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
                 });
 
-                listenerVariable = "mousedown";
+                listenerVariable = "mousemove";
 
 
                 allCells.forEach((cell) => {
@@ -178,27 +174,13 @@ settings.addEventListener("click", (e) => {
 
                     });
 
-                // try with flags here
-                handleClick;
-
-                
                 };
                 break; 
 
     };
 }); 
 
-function handleClick(event){
-    allCells.forEach((cell) => {
-        cell.addEventListener("mouseover", () => {
-            if (isMouseDown === true) {
-                action
-            } else {
-                event.preventDefault();
-            };
-        });
-    });
-};
+
 
 makeGrid(16);
 
