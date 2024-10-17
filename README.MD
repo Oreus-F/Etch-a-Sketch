@@ -7,7 +7,32 @@ After that i spent more time, looking at others work and realise that i was able
 
 I realise quickly, as simple as it seems, makes everythings work together wasn't that simple. That was the perfect opportunity to came back into old concept and articles in order to make everything works. 
 
-Expect the general design (wich i want take care at the end when all the js's done.) i'm actually finishing some details right now that i really want to get into.
 
+-- FEATURES --
 
-Anyways, It's cool to test itself with that kind of project, realise there's it a lot to learn and it's still enjoyable. 
+- HOVERING MODE
+- CLICK MODE
+- RAINBOW COLOR
+- BLACK COLOR
+- ERASER
+- CLEAR ALL BOARD
+- MAKE A NEW GRID
+
+-- NEWS --
+
+- CLICK MODE NOW ADDING COLORS IF YOU HANDLE THE MOUSEDOWN
+    - ADD 3 FUNCTIONS FOR MOUSEDOWN / MOUSEMOVE / MOUSEUP
+    - USE A FLAG SYSTEM THAT ACTIVATE ON MOUSEDOWN
+    - MAKE THE MOUSEMOVE WORK ONLY IF THAT VALUE IS "TRUE"
+    - DESACTIVATE THE FLAG ON MOUSEUP
+
+- CLEAN CODE FOR THE MOUSEOVER AND CLICK SWITCH CASES
+- ADD A BACKGROUND HOVERING THE CELL BEFORE CLICKING ON IT
+
+-- TODO --
+
+- SELECTED COLOR
+- KEEP THE SAME COLOR ON RAINBOWMODE
+- DARKER MODE (OPACITY INCREASE)
+- BETTER UI
+- BETTER FLEX BOX
