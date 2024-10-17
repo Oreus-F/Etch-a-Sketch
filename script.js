@@ -35,14 +35,13 @@ function makeGrid(gridNumb){
         for (let j= 0; j< gridNumb; j++) {
             const cell = document.createElement("div");
             column.appendChild(cell).setAttribute("class", "gridRow");
+            cell.addEventListener(listenerVariable, action);
         };
     });
 
-    allCells = document.querySelectorAll(".gridRow");
-    allCells.forEach((cell) => {
-        cell.addEventListener(listenerVariable, action);
-    });
- 
+
+
+
 };
 
 function newGrid(){
@@ -70,19 +69,30 @@ function eraserBrushMode(event){
 };
 
 function rainbowBrushMode(event){
-    event.target.style.backgroundColor = getRandomRGB()
+    return style = event.target.style.backgroundColor = getRandomRGB();
 };
 
 //NEED OPTION TO CHOOSE COLOR NOW ITS JUST BLACK
 function selectedColorBrushMode(event){
-    if (listenerVariable === "mouseover") {
-        event.target.style.backgroundColor = "black";
-    } else if (event.buttons == 1) {
-        event.preventDefault();
-        event.target.style.backgroundColor = "black";
+    console.log("hello");
+    return style = event.target.style.backgroundColor = "black";
+};
+
+function startDraw(event){
+    isMouseDown = true;
+    console.log("hello");
+    draw(event);
+};
+
+function draw(event){
+    if (isMouseDown === true){
+        action(event);
     };
 };
 
+function stopDraw(){
+    isMouseDown = false;
+};
 
 
 
@@ -149,38 +159,34 @@ settings.addEventListener("click", (e) => {
                 break;
             } else {
                 allCells.forEach((cell) => {
+                    listenerVariable = "mousedown";
                     cell.removeEventListener(listenerVariable, action);
-                });
-                listenerVariable = "mouseover";
-                allCells.forEach((cell) => {
+                    listenerVariable = "mouseover";
                     cell.addEventListener(listenerVariable, action);
-                    });
-                };
-                break; 
+                });
+            };
+            break; 
             
         case "click":
-            if (listenerVariable === "mousemove") {
+            if (listenerVariable === "mousedown") {
                 break;
             } else {
                 allCells.forEach((cell) => {
+                    listenerVariable = "mouseover";
                     cell.removeEventListener(listenerVariable, action);
-                });
-
-                listenerVariable = "mousemove";
-
-
-                allCells.forEach((cell) => {
+                    listenerVariable = "mousedown";
                     cell.addEventListener(listenerVariable, action);
+                    cell.addEventListener("mousedown", startDraw);
+                    cell.addEventListener("mouseover", draw);
 
-                    });
-
+                });
                 };
-                break; 
+            break; 
 
     };
 }); 
 
 
-
-makeGrid(16);
+document.addEventListener("mouseup", stopDraw)
+document.addEventListener("DOMContentLoaded", () => makeGrid(16));
 
