@@ -73,6 +73,10 @@ button{
     border: 1px dashed, lightgray;
 }
 
+.gridRow:hover{
+    background-color: #ddd;
+}
+
 .header{
     text-align: center;
 }
