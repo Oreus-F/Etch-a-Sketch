@@ -74,14 +74,11 @@ function rainbowBrushMode(event){
 
 //NEED OPTION TO CHOOSE COLOR NOW ITS JUST BLACK
 function selectedColorBrushMode(event){
-    console.log("hello");
     return style = event.target.style.backgroundColor = "black";
 };
 
-function startDraw(event){
+function startDraw(){
     isMouseDown = true;
-    console.log("hello");
-    draw(event);
 };
 
 function draw(event){
