@@ -13,6 +13,7 @@ I realise quickly, as simple as it seems, makes everythings work together wasn't
 - HOVERING MODE
 - CLICK MODE
 - RAINBOW COLOR
+    - THE CELL KEEP THE FIRST COLOR FROM THAT MODE
 - SELECTED COLOR
 - ERASER
 - CLEAR ALL BOARD
@@ -21,10 +22,11 @@ I realise quickly, as simple as it seems, makes everythings work together wasn't
 -- NEWS --
 
  - YOU CAN SELECT YOUR COLOR WITH THE INPUT OPTION
+ - THE RAINBOW MODE KEEP THE COLOR
 
 -- TODO --
 
-- KEEP THE SAME COLOR ON RAINBOWMODE
 - DARKER MODE (OPACITY INCREASE)
+- KEEP RAINBOW COLOR OPTIONNAL ? 
 - BETTER UI
 - BETTER FLEX BOX
