@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const settings = document.querySelector(".settings");
+const inputColor = document.querySelector("#colorMode");
 let allColumns;
 let allCells;
 let listenerVariable = "mouseover";
@@ -64,6 +65,13 @@ function getRandomRGB(){
     return rgb;  
 };
 
+function inputValueColor(){
+    inputColor.addEventListener("change", (e) => {
+        return inputColor.value;
+    });
+    return inputColor.value;
+};
+
 function eraserBrushMode(event){
     event.target.removeAttribute("style");
 };
@@ -74,7 +82,7 @@ function rainbowBrushMode(event){
 
 //NEED OPTION TO CHOOSE COLOR NOW ITS JUST BLACK
 function selectedColorBrushMode(event){
-    return style = event.target.style.backgroundColor = "black";
+    return style = event.target.style.backgroundColor = inputValueColor();
 };
 
 function startDraw(){
