@@ -44,8 +44,6 @@ function makeGrid(gridNumb){
     });
 
 
-
-
 };
 
 function newGrid(){
@@ -113,10 +111,9 @@ function stopDraw(){
 function DarkerMode(){
     if (darkMode) {
         darkMode = false;
-        console.log(darkMode);
     } else {
+        clearAll();
         darkMode = true;
-        console.log(darkMode);
     };
 };
 
@@ -137,6 +134,10 @@ settings.addEventListener("click", (e) => {
             clearAll();
             break;
 
+        case "darkerMode":
+            DarkerMode();
+            break;
+    
         case "colorMode":
             if (action === selectedColorBrushMode) {
                 break;
@@ -181,10 +182,6 @@ settings.addEventListener("click", (e) => {
                 };
                 break;                
 
-        case "darkerMode":
-            DarkerMode();
-            break;
-
         case "mouseover":
             if (listenerVariable === "mouseover") {
                 break;
@@ -219,7 +216,6 @@ settings.addEventListener("click", (e) => {
     };
 }); 
 
-console.log(darkMode);
 
 document.addEventListener("mouseup", stopDraw)
 document.addEventListener("DOMContentLoaded", () => makeGrid(16));
