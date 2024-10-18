@@ -6,6 +6,7 @@ let allCells;
 let listenerVariable = "mouseover";
 let action = selectedColorBrushMode;
 let isMouseDown = false;
+let darkMode = false;
 
 
 function removeGrid(){
@@ -109,6 +110,15 @@ function stopDraw(){
     isMouseDown = false;
 };
 
+function DarkerMode(){
+    if (darkMode) {
+        darkMode = false;
+        console.log(darkMode);
+    } else {
+        darkMode = true;
+        console.log(darkMode);
+    };
+};
 
 
 //Listener for all settings panel
@@ -171,6 +181,10 @@ settings.addEventListener("click", (e) => {
                 };
                 break;                
 
+        case "darkerMode":
+            DarkerMode();
+            break;
+
         case "mouseover":
             if (listenerVariable === "mouseover") {
                 break;
@@ -205,6 +219,7 @@ settings.addEventListener("click", (e) => {
     };
 }); 
 
+console.log(darkMode);
 
 document.addEventListener("mouseup", stopDraw)
 document.addEventListener("DOMContentLoaded", () => makeGrid(16));
