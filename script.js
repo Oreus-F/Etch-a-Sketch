@@ -37,6 +37,8 @@ function makeGrid(gridNumb){
             const cell = document.createElement("div");
             column.appendChild(cell).setAttribute("class", "gridRow");
             cell.addEventListener(listenerVariable, action);
+            cell.addEventListener("mousedown", startDraw);
+            cell.addEventListener("mouseover", draw);
         };
     });
 
@@ -145,6 +147,8 @@ settings.addEventListener("click", (e) => {
             } else {
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
+                    cell.removeEventListener("mousedown", startDraw);
+                    cell.removeEventListener("mouseover", draw);
                 });
                 action = rainbowBrushMode;
                 allCells.forEach((cell) => {
