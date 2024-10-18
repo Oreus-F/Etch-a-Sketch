@@ -54,6 +54,7 @@ function newGrid(){
 function clearAll(){
     allCells.forEach((element) =>{
         element.removeAttribute("style");
+        element.classList.remove("colored");
     });
 };
 
@@ -73,15 +74,22 @@ function inputValueColor(){
 };
 
 function eraserBrushMode(event){
+    event.target.classList.remove("colored");
     event.target.removeAttribute("style");
 };
 
 function rainbowBrushMode(event){
-    return style = event.target.style.backgroundColor = getRandomRGB();
+    if (event.target.classList.contains("colored")) {
+        return;
+    } else {
+        event.target.classList.add("colored");
+        return style = event.target.style.backgroundColor = getRandomRGB();
+};
 };
 
-//NEED OPTION TO CHOOSE COLOR NOW ITS JUST BLACK
+
 function selectedColorBrushMode(event){
+    event.target.classList.remove("colored");
     return style = event.target.style.backgroundColor = inputValueColor();
 };
 
