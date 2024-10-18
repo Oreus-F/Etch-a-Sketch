@@ -83,6 +83,7 @@ function startDraw(){
 
 function draw(event){
     if (isMouseDown === true){
+        console.log("test")
         action(event);
     };
 };
@@ -158,6 +159,8 @@ settings.addEventListener("click", (e) => {
                 allCells.forEach((cell) => {
                     listenerVariable = "mousedown";
                     cell.removeEventListener(listenerVariable, action);
+                    cell.removeEventListener("mousedown", startDraw);
+                    cell.removeEventListener("mouseover", draw);
                     listenerVariable = "mouseover";
                     cell.addEventListener(listenerVariable, action);
                 });
