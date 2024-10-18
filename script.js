@@ -91,7 +91,6 @@ function startDraw(){
 
 function draw(event){
     if (isMouseDown === true){
-        console.log("test")
         action(event);
     };
 };
