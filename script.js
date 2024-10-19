@@ -67,6 +67,14 @@ function getRandomRGB(){
     return rgb;  
 };
 
+function hexToRGB(hex){
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+
+    return color = `rgb(${r}, ${g}, ${b})`;
+};
+
 function inputValueColor(){
     inputColor.addEventListener("change", (e) => {
         return inputColor.value;
@@ -103,8 +111,25 @@ function rainbowBrushMode(event){
 }
 
 function selectedColorBrushMode(event){
-    event.target.classList.remove("colored");
-    return style = event.target.style.backgroundColor = inputValueColor();
+
+    if (darkMode) {
+        if (event.target.style.backgroundColor == inputValueColor()) {
+            if (event.target.style.opacity == 1) {
+                return;
+            } else {
+                event.target.style.opacity -= "-0.2";
+            };
+        } else {
+            console.log(inputValueColor());
+            console.log(event.target.style.backgroundColor);
+            event.target .style.opacity = "0.2";
+            event.target.classList.remove("colored");
+            return style = event.target.style.backgroundColor = inputValueColor();
+        };
+    } else {
+        event.target.classList.remove("colored");
+        return style = event.target.style.backgroundColor = inputValueColor();
+    };  
 };
 
 function startDraw(){
@@ -229,6 +254,10 @@ settings.addEventListener("click", (e) => {
 
     };
 }); 
+
+
+console.log(hexToRGB("#964545"));
+console.log("rgb(150, 69, 69)");
 
 
 document.addEventListener("mouseup", stopDraw)
