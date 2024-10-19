@@ -6,7 +6,7 @@ let allCells;
 let listenerVariable = "mouseover";
 let action = selectedColorBrushMode;
 let isMouseDown = false;
-let darkMode = false;
+let darkMode = true;
 
 
 function removeGrid(){
