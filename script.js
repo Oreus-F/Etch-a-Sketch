@@ -113,15 +113,13 @@ function rainbowBrushMode(event){
 function selectedColorBrushMode(event){
 
     if (darkMode) {
-        if (event.target.style.backgroundColor == inputValueColor()) {
+        if (event.target.style.backgroundColor == hexToRGB(inputValueColor())) {
             if (event.target.style.opacity == 1) {
                 return;
             } else {
                 event.target.style.opacity -= "-0.2";
             };
         } else {
-            console.log(inputValueColor());
-            console.log(event.target.style.backgroundColor);
             event.target .style.opacity = "0.2";
             event.target.classList.remove("colored");
             return style = event.target.style.backgroundColor = inputValueColor();
@@ -255,9 +253,6 @@ settings.addEventListener("click", (e) => {
     };
 }); 
 
-
-console.log(hexToRGB("#964545"));
-console.log("rgb(150, 69, 69)");
 
 
 document.addEventListener("mouseup", stopDraw)
