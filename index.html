@@ -14,29 +14,39 @@
 
     <div class="middleSection">
     
-        <div class="settings">
-            <div class="panel">
-                <div class="general hover">
-                    <div class="settingTitle">General</div>
-                    <button id="newGrid" class="generalButton">New Grid</button>
-                    <button id="clearAll" class="generalButton">Clear</button>
-                    <button id="darkerMode" class="generalButton">Darker</button>
-                </div>
+        <div class="controlers">
+            <div class="settings">
+                <div class="panel">
+                    <div class="general hover">
+                        <div class="settingTitle">General</div>
+                        <button id="newGrid" class="generalButton">New Grid</button>
+                        <button id="clearAll" class="generalButton">Clear</button>
+                        <button id="darkerMode" class="generalButton">Darker</button>
+                    </div>
 
-                <div class="color hover">
-                    <input type="color" id="colorMode">
-                    <label for="colorMode">Color</label>
-                    <button id="rainbowMode" class="colorButton">Rainbow</button>
-                    <button id="keepRainbowColor" class="colorButton">Keep Rainbow Color : ON</button>
-                    <button id="eraserMode" class="colorButton">Eraser</button>
-                </div>
+                    <div class="color hover">
+                        <input type="color" id="colorMode">
+                        <label for="colorMode">Color</label>
+                        <button id="rainbowMode" class="colorButton">Rainbow</button>
+                        <button id="keepRainbowColor" class="colorButton">Keep Rainbow Color : ON</button>
+                        <button id="eraserMode" class="colorButton">Eraser</button>
+                    </div>
 
-                <div class="brush hover">Brush
-                    <button id ="mouseover" class="brushButtonMode">Hover</button>
-                    <button id ="click" class="brushButtonMode">Click</button>
+                    <div class="brush hover">Brush
+                        <button id ="mouseover" class="brushButtonMode">Hover</button>
+                        <button id ="click" class="brushButtonMode">Click</button>
+                    </div>
                 </div>
             </div>
+            <div class="explainationBox">
+                <p>What's that ?</p>
+                <p id="settingsExplained">Hover a button if you need explaination</p>
+            </div>
+            <div class="recapBox">
+                Active settings
+            </div>
         </div>
+
         <div class="container"></div>
 
     </div>
