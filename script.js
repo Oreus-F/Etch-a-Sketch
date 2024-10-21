@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
 const settings = document.querySelector(".settings");
 const inputColor = document.querySelector("#colorMode");
+const rainbowKeepButton = document.querySelector("#keepRainbowColor");
 let allColumns;
 let allCells;
 let listenerVariable = "mouseover";
@@ -215,9 +216,19 @@ settings.addEventListener("click", (e) => {
                 allCells.forEach((cell) => {
                     cell.addEventListener(listenerVariable, action);
                     });
-                };
-                break; 
+            };
+            break; 
         
+        case "keepRainbowColor":
+            if (keepRainbowOption){
+                keepRainbowOption = false;
+                rainbowKeepButton.textContent = "Keep Rainbow Color : OFF";
+            } else {
+                keepRainbowOption = true;
+                rainbowKeepButton.textContent = "Keep Rainbow Color : ON";
+            };
+            break;
+
         case "eraserMode":
             if (action === eraserBrushMode) {
                 break;
