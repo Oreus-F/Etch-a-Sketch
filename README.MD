@@ -25,7 +25,7 @@ I realise quickly, as simple as it seems, makes everythings work together wasn't
 
  -- IN PROGRESS --
 
-    /
+ - HELP ME SETTINGS
 
 -- TODO --
 
