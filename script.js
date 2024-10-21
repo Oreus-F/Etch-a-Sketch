@@ -275,7 +275,19 @@ settings.addEventListener("click", (e) => {
             break; 
 
     };
-}); 
+});
+
+//Listener for explanation
+settings.addEventListener("mouseover", (e) => {
+    let target = e.target;
+    const helpMeBox = document.querySelector("#settingsExplained");
+
+    switch(target.id){
+
+        case "newGrid":
+            helpMeBox.textContent = "Enter a number to create a new grid between 2x2 and 100x100";
+    };
+});
 
 
 
