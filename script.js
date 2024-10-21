@@ -7,6 +7,7 @@ let listenerVariable = "mouseover";
 let action = selectedColorBrushMode;
 let isMouseDown = false;
 let darkMode = true;
+let keepRainbowOption = true;
 
 
 function removeGrid(){
@@ -88,27 +89,41 @@ function eraserBrushMode(event){
 };
 
 function rainbowBrushMode(event){
-    if (darkMode) {
-        if (event.target.classList.contains("colored")){
-            if (event.target.style.opacity == 1) {
-                return;
+
+    if (keepRainbowOption){
+        if (darkMode) {
+            if (event.target.classList.contains("colored")){
+                if (event.target.style.opacity == 1) {
+                    return;
+                } else {
+                    event.target.style.opacity -= "-0.2";
+                };
             } else {
+                event.target.classList.add("colored");
                 event.target.style.opacity -= "-0.2";
+                return style = event.target.style.backgroundColor = getRandomRGB();
             };
         } else {
-            event.target.classList.add("colored");
-            event.target.style.opacity -= "-0.2";
-            return style = event.target.style.backgroundColor = getRandomRGB();
+            if (event.target.classList.contains("colored")) {
+                return;
+            } else {
+                event.target.classList.add("colored");
+                return style = event.target.style.backgroundColor = getRandomRGB();
+            };
         };
     } else {
-        if (event.target.classList.contains("colored")) {
-            return;
+        if (darkMode) {
+            if (event.target.style.opacity == 1) {
+                return style = event.target.style.backgroundColor = getRandomRGB();
+            } else {
+                event.target.style.opacity -= "-0.2";
+                return style = event.target.style.backgroundColor = getRandomRGB();
+            };
         } else {
-            event.target.classList.add("colored");
             return style = event.target.style.backgroundColor = getRandomRGB();
+        };
     };
-    };
-}
+};
 
 function selectedColorBrushMode(event){
 
@@ -195,8 +210,6 @@ settings.addEventListener("click", (e) => {
             } else {
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
-                    cell.removeEventListener("mousedown", startDraw);
-                    cell.removeEventListener("mouseover", draw);
                 });
                 action = rainbowBrushMode;
                 allCells.forEach((cell) => {
