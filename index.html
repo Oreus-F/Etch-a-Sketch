@@ -14,37 +14,32 @@
 
     <div class="middleSection">
     
-        <div class="controlers">
-            <div class="settings">
+
+        <div class="settings">
                 <div class="panel">
                     <div class="general hover">
                         <div class="settingTitle">General</div>
-                        <button id="newGrid" class="generalButton">New Grid</button>
-                        <button id="clearAll" class="generalButton">Clear</button>
-                        <button id="darkerMode" class="generalButton">Darker</button>
+                        <button title="Enter a number to create a new grid between 2x2 and 100x100" id="newGrid" class="generalButton">New Grid</button>
+                        <button title="Reset the actual grid" id="clearAll" class="generalButton">Clear</button>
+                        <button title="If activated, it will darkens the square at each interaction - will reset the grid when it's activate or desactivate" id="darkerMode" class="generalButton">Darker</button>
                     </div>
 
                     <div class="color hover">
                         <input type="color" id="colorMode">
-                        <label for="colorMode">Color</label>
-                        <button id="rainbowMode" class="colorButton">Rainbow</button>
-                        <button id="keepRainbowColor" class="colorButton">Keep Rainbow Color : ON</button>
-                        <button id="eraserMode" class="colorButton">Eraser</button>
+                        <label title="Pick your own color" for="colorMode">Color</label>
+                        <button title="Will apply a random color" id="rainbowMode" class="colorButton">Rainbow</button>
+                        <button title="If activated, will keep the color randomly assign with the rainbow mode" id="keepRainbowColor" class="colorButton">Keep Rainbow Color : ON</button>
+                        <button title="Use your mouse as a eraser" id="eraserMode" class="colorButton">Eraser</button>
                     </div>
 
                     <div class="brush hover">Brush
-                        <button id ="mouseover" class="brushButtonMode">Hover</button>
-                        <button id ="click" class="brushButtonMode">Click</button>
+                        <button title="Mouse over the grid to paint it" id ="mouseover" class="brushButtonMode">Hover</button>
+                        <button title="Click and drag your mouse on the grid to paint it" id ="click" class="brushButtonMode">Click</button>
                     </div>
                 </div>
-            </div>
-            <div class="explainationBox">
-                <p>What's that ?</p>
-                <p id="settingsExplained">Hover a button if you need explaination</p>
-            </div>
-            <div class="recapBox">
-                Active settings
-            </div>
+                <div class="recapBox">
+                    Active settings
+                </div>
         </div>
 
         <div class="container"></div>
