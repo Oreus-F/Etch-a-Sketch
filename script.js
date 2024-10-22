@@ -22,7 +22,7 @@ function getGridNumb(){
     while (!(Number(gridNumb > 1 && gridNumb <= 100))){
         gridNumb = prompt("Grid size ?");
         if (!(Number(gridNumb > 1 && gridNumb <= 100))){ 
-            alert("Only a number between 2 and 100 are allowed.");
+            alert("Only numbers between 2 and 100 are allowed.");
         };
     };
     return gridNumb;
@@ -276,19 +276,6 @@ settings.addEventListener("click", (e) => {
 
     };
 });
-
-//Listener for explanation
-settings.addEventListener("mouseover", (e) => {
-    let target = e.target;
-    const helpMeBox = document.querySelector("#settingsExplained");
-
-    switch(target.id){
-
-        case "newGrid":
-            helpMeBox.textContent = "Enter a number to create a new grid between 2x2 and 100x100";
-    };
-});
-
 
 
 document.addEventListener("mouseup", stopDraw)
