@@ -15,43 +15,26 @@ html{
     padding: 0;
 }
 
-
-a{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-}
-
-button{
-    max-width: fit-content;
-    max-height: fit-content;
-}
+/* GENERAL VIEW - FOOTER - HEADER - MIDDLE */
 
 .footer, .header{
     width: 100vw;
 }
 
-.middleSection{
-    display: flex;
-    flex: 1;
-}
 
-.settings{
-    flex: 1;
-    display: flex;
-    padding: 6mm;
-    padding-right: 25mm;
-    
-}
-
-.panel{
-    flex : 1;
-    display: flex;
-    flex-direction: column;
-    max-height: 500px;
-    min-height: fit-content;
+.header{
     text-align: center;
 }
+
+.footer{
+    padding: 6mm;
+}
+
+.middleSection{
+ 
+}
+
+/* GRID PART */
 
 .container{
     border: 1px solid black;
@@ -77,21 +60,28 @@ button{
     background-color: #ddd;
 }
 
-.header{
-    text-align: center;
-}
+/* SETTINGS */
 
-.footer{
-    display: flex;
-    justify-content: space-around;
+.settings{
     padding: 6mm;
+    padding-right: 25mm;
+    
 }
 
 .hover{
     border: 1px solid black;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
+/* GENERAL TAG */
+
+a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+button{
+    max-width: fit-content;
+    max-height: fit-content;
+}
 
