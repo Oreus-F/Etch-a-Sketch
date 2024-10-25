@@ -27,11 +27,13 @@ html{
 }
 
 .footer{
+    display: flex;
+    justify-content: space-between;
     padding: 6mm;
 }
 
 .middleSection{
- 
+    
 }
 
 /* GRID PART */
@@ -39,7 +41,7 @@ html{
 .container{
     border: 1px solid black;
     display : flex;
-    flex: 4 0 auto;
+    flex: 1 0 auto;
     aspect-ratio: 1/1;
     background-color: white;
 }
@@ -63,13 +65,13 @@ html{
 /* SETTINGS */
 
 .settings{
-    padding: 6mm;
-    padding-right: 25mm;
-    
+    padding: 0mm 6mm;
+    display: flex;
 }
 
 .hover{
     border: 1px solid black;
+    height: 500mm
 }
 
 /* GENERAL TAG */
