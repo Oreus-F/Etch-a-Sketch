@@ -1,13 +1,12 @@
 body{
     height: 100vh;
     width: 100vw;
-    display: flex;
     margin: 0px;
     padding: 0;
+    display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-direction: column;
-    background-color: rgba(25, 153, 25, 0.1)
+    font-family: "varela round", lombok, "mona inn";
 }
 
 html{
@@ -17,45 +16,51 @@ html{
 
 /* GENERAL VIEW - FOOTER - HEADER - MIDDLE */
 
-.footer, .header{
-    width: 100vw;
+.header, .footer{
+    padding: 0% 5%;
 }
-
 
 .header{
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer{
     display: flex;
     justify-content: space-between;
-    padding: 6mm;
 }
 
 .middleSection{
-    
+    display: flex;
+    flex: 1;
+    padding: 5%;
 }
+
 
 /* GRID PART */
 
 .container{
-    border: 1px solid black;
-    display : flex;
-    flex: 1 0 auto;
-    aspect-ratio: 1/1;
     background-color: white;
+    display: flex;
+    flex: 1;
+    aspect-ratio: 1/1;
+    max-height: 100vh;
 }
 
 .gridColumn{
     display: flex;
-    flex-direction: column;
     flex: 1;
+    flex-direction: column;
 }
 
 .gridRow{
-    flex: 1;
     background-color: white;
     border: 1px dashed, lightgray;
+    display: flex;
+    flex: 1;
+    aspect-ratio: 1/1;
 }
 
 .gridRow:hover{
@@ -65,13 +70,36 @@ html{
 /* SETTINGS */
 
 .settings{
-    padding: 0mm 6mm;
+    margin-right: 30mm;
     display: flex;
+    flex-direction: column;
 }
 
+.general{
+    border-top: 1px solid black;
+    
+}
+
+.brush{
+    border-bottom: 1px solid black;
+}
+
+.general, .color{
+    border-bottom: 1px dotted black;
+}
+
+
+
 .hover{
-    border: 1px solid black;
-    height: 500mm
+    border-radius: 2mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    padding: 3mm;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    background-color: #EFF7CF;
 }
 
 /* GENERAL TAG */
@@ -83,7 +111,32 @@ a{
 }
 
 button{
-    max-width: fit-content;
-    max-height: fit-content;
+    max-width: 80mm;
+    max-height: 50mm;
+    padding: 1mm;
+    border-radius: 0,5mm;
+    margin: 3px;
 }
 
+
+
+/* FONTS */
+
+.title{
+    font-size: 32px;
+    font-weight: 800;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.amen{
+    color: #586F6B;
+}
+
+.ok{
+    color: #DDD5D0;
+}
+
+.pixelArt{
+    color : #586F6B;
+    font-weight: bold;
+}
