@@ -1,12 +1,11 @@
 body{
-    height: 100vh;
-    width: 100vw;
     margin: 0px;
     padding: 0;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     font-family: "varela round", lombok, "mona inn";
+    background-color: #FEFFFE;
 }
 
 html{
@@ -45,8 +44,9 @@ html{
     background-color: white;
     display: flex;
     flex: 1;
-    aspect-ratio: 1/1;
-    max-height: 100vh;
+    height: 700px;
+    width: 700px;
+    border: 2px solid black;
 }
 
 .gridColumn{
@@ -60,7 +60,6 @@ html{
     border: 1px dashed, lightgray;
     display: flex;
     flex: 1;
-    aspect-ratio: 1/1;
 }
 
 .gridRow:hover{
@@ -99,7 +98,10 @@ html{
     padding: 3mm;
     border-left: 1px black solid;
     border-right: 1px black solid;
-    background-color: #EFF7CF;
+}
+
+#colorMode{
+    display:none;
 }
 
 /* GENERAL TAG */
@@ -110,29 +112,34 @@ a{
     text-decoration: none;
 }
 
-button{
-    max-width: 80mm;
-    max-height: 50mm;
+.buttonLook{
+    width: 50mm;
+    height: 16mm;
     padding: 1mm;
-    border-radius: 0,5mm;
-    margin: 3px;
+    margin: 8px;
+    background-color: #FEFFFE;
+    border: 6px solid #750D37;
+    font-weight: 800;
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+
 }
 
 
 
 /* FONTS */
 
-.title{
+.titleOne{
     font-size: 32px;
     font-weight: 800;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.amen{
+.titleTwo{
     color: #586F6B;
 }
 
-.ok{
+.titleThree{
     color: #DDD5D0;
 }
 
