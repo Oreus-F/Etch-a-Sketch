@@ -22,15 +22,16 @@ I realise quickly, as simple as it seems, makes everythings work together wasn't
 
 -- NEWS --
 
- - DESCRIPTION TO EACH OPTION - TITLE ATTRIBUTE
+ - BETTER FLEXBOX
 
  -- IN PROGRESS --
 
- - /
+ - GENERAL UI
+  - FONTS FAMILY SIZE AND COLOR
+  - LABEL TEXT ALIGN
+  - COLORS FOR SETTINGS PANELS AND TEXT
 
 -- TODO --
 
-- RECAP BOX (WICH OPTIONS ARE ACTIVATED)
-- BETTER FLEX BOX
-- BETTER UI
+- GENERAL UI
 
