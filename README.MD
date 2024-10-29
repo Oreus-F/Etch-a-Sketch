@@ -22,11 +22,11 @@ I realise quickly, as simple as it seems, makes everythings work together wasn't
 
 -- NEWS --
 
- - BETTER FLEXBOX
+ - HOVER LAYERS FOR BUTTONS
 
  -- IN PROGRESS --
 
- - GENERAL UI
+  - GENERAL UI
   - FONTS FAMILY SIZE AND COLOR
   - LABEL TEXT ALIGN
   - COLORS FOR SETTINGS PANELS AND TEXT
