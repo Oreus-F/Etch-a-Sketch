@@ -98,6 +98,7 @@ html{
     padding: 3mm;
     border-left: 1px black solid;
     border-right: 1px black solid;
+    background-color: rgba(#750D37, 0.6);
 }
 
 #colorMode{
@@ -114,15 +115,21 @@ a{
 
 .buttonLook{
     width: 50mm;
-    height: 16mm;
-    padding: 1mm;
+    height: 12mm;
     margin: 8px;
     background-color: #FEFFFE;
     border: 6px solid #750D37;
     font-weight: 800;
     font-size: 15px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #750D37;
 
+}
+
+.buttonLook:hover{
+    background-color: #750D37;
+    color: #FEFFFE;
+    border-color: #FEFFFE;
 }
 
 
@@ -133,17 +140,18 @@ a{
     font-size: 32px;
     font-weight: 800;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #210124;
 }
 
 .titleTwo{
-    color: #586F6B;
+    color: black;
 }
 
 .titleThree{
-    color: #DDD5D0;
+    color: #750D37;
 }
 
 .pixelArt{
-    color : #586F6B;
+    color : #750D37;
     font-weight: bold;
 }
