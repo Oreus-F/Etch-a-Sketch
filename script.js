@@ -1,7 +1,12 @@
 const container = document.querySelector(".container");
 const settings = document.querySelector(".settings");
 const inputColor = document.querySelector("#colorMode");
+const colorModeButton = document.querySelector("#colorModeLabel");
+const rainbowModeButton = document.querySelector("#rainbowMode");
+const eraserModeButton = document.querySelector("#eraserMode");
 const rainbowKeepButton = document.querySelector("#keepRainbowColor");
+const hoverButton = document.querySelector("#mouseover");
+const clickButton = document.querySelector("#click");
 let allColumns;
 let allCells;
 let listenerVariable = "mouseover";
@@ -9,6 +14,9 @@ let action = selectedColorBrushMode;
 let isMouseDown = false;
 let darkMode = true;
 let keepRainbowOption = true;
+let colorButton = true;
+let rainbowButton = false;
+let eraserButton = false;
 
 
 function removeGrid(){
@@ -170,6 +178,21 @@ function DarkerMode(){
     };
 };
 
+function getActiveButtonLook(){
+    if (colorButton){
+        colorModeButton.classList.add("buttonLookActive");
+        rainbowModeButton.classList.remove("buttonLookActive");
+        eraserModeButton.classList.remove("buttonLookActive");
+    } else if (rainbowButton){
+        colorModeButton.classList.remove("buttonLookActive");
+        rainbowModeButton.classList.add("buttonLookActive");
+        eraserModeButton.classList.remove("buttonLookActive");
+    } else {
+        colorModeButton.classList.remove("buttonLookActive");
+        rainbowModeButton.classList.remove("buttonLookActive");
+        eraserModeButton.classList.add("buttonLookActive");
+    };
+};
 
 //Listener for all settings panel
 settings.addEventListener("click", (e) => {
@@ -189,12 +212,21 @@ settings.addEventListener("click", (e) => {
 
         case "darkerMode":
             DarkerMode();
+            if (darkMode === true) {
+                target.classList.add("buttonLookActive");
+            } else {
+                target.classList.remove("buttonLookActive");
+            };
             break;
     
         case "colorMode":
             if (action === selectedColorBrushMode) {
                 break;
             } else {
+                colorButton = true;
+                rainbowButton = false;
+                eraserButton = false;
+                getActiveButtonLook();
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
                 });
@@ -209,6 +241,10 @@ settings.addEventListener("click", (e) => {
             if (action === rainbowBrushMode) {
                 break;
             } else {
+                colorButton = false;
+                rainbowButton = true;
+                eraserButton = false;
+                getActiveButtonLook();
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
                 });
@@ -222,10 +258,10 @@ settings.addEventListener("click", (e) => {
         case "keepRainbowColor":
             if (keepRainbowOption){
                 keepRainbowOption = false;
-                rainbowKeepButton.textContent = "Keep Rainbow Color : OFF";
+                rainbowKeepButton.classList.remove("buttonLookActive");
             } else {
                 keepRainbowOption = true;
-                rainbowKeepButton.textContent = "Keep Rainbow Color : ON";
+                rainbowKeepButton.classList.add("buttonLookActive");
             };
             break;
 
@@ -233,6 +269,10 @@ settings.addEventListener("click", (e) => {
             if (action === eraserBrushMode) {
                 break;
             } else {
+                colorButton = false;
+                rainbowButton = false;
+                eraserButton = true;
+                getActiveButtonLook();
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
                 });
@@ -247,6 +287,8 @@ settings.addEventListener("click", (e) => {
             if (listenerVariable === "mouseover") {
                 break;
             } else {
+                clickButton.classList.remove("buttonLookActive");
+                hoverButton.classList.add("buttonLookActive");
                 allCells.forEach((cell) => {
                     listenerVariable = "mousedown";
                     cell.removeEventListener(listenerVariable, action);
@@ -262,6 +304,8 @@ settings.addEventListener("click", (e) => {
             if (listenerVariable === "mousedown") {
                 break;
             } else {
+                hoverButton.classList.remove("buttonLookActive");
+                clickButton.classList.add("buttonLookActive");
                 allCells.forEach((cell) => {
                     listenerVariable = "mouseover";
                     cell.removeEventListener(listenerVariable, action);
@@ -276,6 +320,10 @@ settings.addEventListener("click", (e) => {
 
     };
 });
+
+
+
+
 
 
 document.addEventListener("mouseup", stopDraw)
