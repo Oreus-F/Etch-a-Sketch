@@ -13,7 +13,7 @@ let listenerVariable = "mouseover";
 let action = selectedColorBrushMode;
 let isMouseDown = false;
 let darkMode = true;
-let keepRainbowOption = true;
+let keepRainbowOption = false;
 let colorButton = true;
 let rainbowButton = false;
 let eraserButton = false;
@@ -182,14 +182,17 @@ function getActiveButtonLook(){
     if (colorButton){
         colorModeButton.classList.add("buttonLookActive");
         rainbowModeButton.classList.remove("buttonLookActive");
+        rainbowKeepButton.classList.add("btn-disable");
         eraserModeButton.classList.remove("buttonLookActive");
     } else if (rainbowButton){
         colorModeButton.classList.remove("buttonLookActive");
         rainbowModeButton.classList.add("buttonLookActive");
+        rainbowKeepButton.classList.remove("btn-disable");
         eraserModeButton.classList.remove("buttonLookActive");
     } else {
         colorModeButton.classList.remove("buttonLookActive");
         rainbowModeButton.classList.remove("buttonLookActive");
+        rainbowKeepButton.classList.add("btn-disable");
         eraserModeButton.classList.add("buttonLookActive");
     };
 };
@@ -245,6 +248,7 @@ settings.addEventListener("click", (e) => {
                 rainbowButton = true;
                 eraserButton = false;
                 getActiveButtonLook();
+
                 allCells.forEach((cell) => {
                     cell.removeEventListener(listenerVariable, action);
                 });

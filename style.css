@@ -87,5 +87,11 @@ body{
     color: #fefffe;
  }
 
+ .btn-disable{
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: not-allowed;
+ }
+
 
  
