@@ -60,10 +60,25 @@ body{
     flex-direction: column;
     align-self: center;
     justify-content: space-around;
+    
  }
 
  #colorMode{
-    display:none;
+    width: 50px;
+    height: 50px;
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+    appearance: none;
+    margin: 0 auto;
+ }
+
+ #colorMode::-webkit-color-swatch{
+    border-radius: 50%;
+ }
+
+ #colorMode::moz-color-swatch{
+    border-radius: 50%;
  }
 
  .buttonLook{
@@ -92,6 +107,8 @@ body{
     pointer-events: none;
     cursor: not-allowed;
  }
+
+ 
 
 
  

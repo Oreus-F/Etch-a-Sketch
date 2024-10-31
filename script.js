@@ -1,16 +1,23 @@
 const container = document.querySelector(".container");
 const settings = document.querySelector(".settings");
+
 const inputColor = document.querySelector("#colorMode");
 const colorModeButton = document.querySelector("#colorModeLabel");
+const colorInput = document.querySelector("#color");
+
 const rainbowModeButton = document.querySelector("#rainbowMode");
 const eraserModeButton = document.querySelector("#eraserMode");
 const rainbowKeepButton = document.querySelector("#keepRainbowColor");
+
 const hoverButton = document.querySelector("#mouseover");
 const clickButton = document.querySelector("#click");
+
 let allColumns;
 let allCells;
+
 let listenerVariable = "mouseover";
 let action = selectedColorBrushMode;
+
 let isMouseDown = false;
 let darkMode = true;
 let keepRainbowOption = false;
@@ -324,10 +331,6 @@ settings.addEventListener("click", (e) => {
 
     };
 });
-
-
-
-
 
 
 document.addEventListener("mouseup", stopDraw)
