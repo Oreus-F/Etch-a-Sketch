@@ -22,14 +22,16 @@ I realise quickly, as simple as it seems, makes everythings work together wasn't
 
 -- NEWS --
 
- - HOVER LAYERS FOR BUTTONS
+ - GENERAL COLOR
 
  -- IN PROGRESS --
 
-  - GENERAL UI
-  - FONTS FAMILY SIZE AND COLOR
-  - LABEL TEXT ALIGN
-  - COLORS FOR SETTINGS PANELS AND TEXT
+  - DOTTED SQUARE BORDER
+  - ROW HOVER
+  - FONTS
+  - COLOR
+  - LINK
+  - RESIZE
 
 -- TODO --
 
