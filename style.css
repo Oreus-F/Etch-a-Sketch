@@ -1,157 +1,60 @@
+/* main website view */
+
 body{
-    margin: 0px;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    font-family: "varela round", lombok, "mona inn";
-    background-color: #FEFFFE;
-}
-
-html{
     margin: 0;
     padding: 0;
-}
-
-/* GENERAL VIEW - FOOTER - HEADER - MIDDLE */
-
-.header, .footer{
-    padding: 0% 5%;
-}
-
-.header{
-    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ }
+ 
+ 
+ .header, .footer{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.footer{
+ }
+ 
+ 
+ .middleSection{
+    flex: 1;
     display: flex;
     justify-content: space-between;
-}
-
-.middleSection{
+ }
+ 
+ 
+ .mainPadding{
+    padding: 24px 48px;
+ }
+ 
+ 
+ /* Sketch pad Part */
+ 
+ 
+ .container{
     display: flex;
-    flex: 1;
-    padding: 5%;
-}
-
-
-/* GRID PART */
-
-.container{
-    background-color: white;
-    display: flex;
-    flex: 1;
-    height: 700px;
-    width: 700px;
-    border: 2px solid black;
-}
-
-.gridColumn{
+    border: 1px solid black;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+ }
+ 
+ 
+ .gridColumn{
     display: flex;
     flex: 1;
     flex-direction: column;
-}
-
-.gridRow{
-    background-color: white;
-    border: 1px dashed, lightgray;
-    display: flex;
+ }
+ 
+ 
+ .gridRow{
     flex: 1;
-}
-
-.gridRow:hover{
-    background-color: #ddd;
-}
-
-/* SETTINGS */
-
-.settings{
-    margin-right: 30mm;
+    border: 1px dotted black;
+ }
+ 
+ 
+ .settings{
     display: flex;
     flex-direction: column;
-}
-
-.general{
-    border-top: 1px solid black;
-    
-}
-
-.brush{
-    border-bottom: 1px solid black;
-}
-
-.general, .color{
-    border-bottom: 1px dotted black;
-}
-
-
-
-.hover{
-    border-radius: 2mm;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: fit-content;
-    padding: 3mm;
-    border-left: 1px black solid;
-    border-right: 1px black solid;
-    background-color: rgba(#750D37, 0.6);
-}
-
-#colorMode{
-    display:none;
-}
-
-/* GENERAL TAG */
-
-a{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-}
-
-.buttonLook{
-    width: 50mm;
-    height: 12mm;
-    margin: 8px;
-    background-color: #FEFFFE;
-    border: 6px solid #750D37;
-    font-weight: 800;
-    font-size: 15px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #750D37;
-
-}
-
-.buttonLook:hover{
-    background-color: #750D37;
-    color: #FEFFFE;
-    border-color: #FEFFFE;
-}
-
-
-
-/* FONTS */
-
-.titleOne{
-    font-size: 32px;
-    font-weight: 800;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: #210124;
-}
-
-.titleTwo{
-    color: black;
-}
-
-.titleThree{
-    color: #750D37;
-}
-
-.pixelArt{
-    color : #750D37;
-    font-weight: bold;
-}
+    align-self: center;
+ }
+ 
