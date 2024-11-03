@@ -8,6 +8,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     background-color: #fefffe;
+    font-family: sans-serif;
  }
  
  
@@ -49,7 +50,11 @@ body{
  
  .gridRow{
     flex: 1;
-    border: 1px dotted black;
+    border: 1px dotted rgba(128, 128, 128, 0.6);
+ }
+
+ .gridRow:hover{
+   background-color: rgba(200, 200, 200, 0.4);
  }
  
  
