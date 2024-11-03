@@ -22,12 +22,11 @@ I realise quickly, as simple as it seems, makes everythings work together wasn't
 
 -- NEWS --
 
- - GENERAL COLOR
+  - DOTTED SQUARE BORDER
+  - ROW HOVER
 
  -- IN PROGRESS --
 
-  - DOTTED SQUARE BORDER
-  - ROW HOVER
   - FONTS
   - COLOR
   - LINK
