@@ -87,21 +87,13 @@ a:hover{
 }
 
 #colorMode{
-    width: 50px;
-    height: 50px;
+    width: 200px;
+    height: 60px;
     border:none;
     background-color: transparent;
     cursor: pointer;
     appearance: none;
     margin: 0 auto;
-}
-
-#colorMode::-webkit-color-swatch{
-    border-radius: 50%;
-}
-
-#colorMode::moz-color-swatch{
-    border-radius: 50%;
 }
 
 .buttonLook{
